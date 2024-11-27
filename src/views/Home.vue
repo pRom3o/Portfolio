@@ -3,7 +3,7 @@ import Header from '@/components/Header.vue';
 import Self from '@/components/Self.vue';
 import About from '@/components/About.vue';
 import Last from '@/components/Last.vue';
-import Footer from '@/components/Footer.vue';
+// import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -15,7 +15,6 @@ import Footer from '@/components/Footer.vue';
       <Self />
       <About />
       <Last />
-      <Footer />
     </main>
   </main>
 </template>

@@ -4,10 +4,34 @@ import Instagram from './icons/Instagram.vue';
 import Enter from './icons/Enter.vue';
 import ProjectModal from './ProjectModal.vue';
 import { ref } from 'vue';
+import Footer from './Footer.vue';
+import { svgs } from './svgs.vue';
+import gsap from 'gsap';
 const isExpanded = ref(false);
+const show = ref(false);
+const toggleShow = () => {
+  show.value = !show.value;
+};
 
 const toggleExpand = () => {
   isExpanded.value = !isExpanded.value;
+};
+
+const beforeEnter = (el) => {
+  // console.log('set initial state');
+  el.style.transform = 'translateY(-100px)';
+  el.style.opacity = 0;
+};
+const enter = (el, done) => {
+  // console.log('make transition');
+  gsap.to(el, {
+    duration: 0.8,
+    y: 0,
+    opacity: 1,
+    ease: 'back.inOut',
+    delay: el.dataset.index * 0.2,
+    onComplete: done,
+  });
 };
 </script>
 
@@ -26,7 +50,7 @@ const toggleExpand = () => {
             <p class="text-xs">STAY WITH ME</p>
             <p class="font-medium text-xl">Profiles</p>
           </div>
-          <p class="cursor-pointer mt-4"><Enter /></p>
+          <button class="cursor-pointer mt-4" @click="toggleShow"><Enter /></button>
         </div>
       </div>
       <div
@@ -54,5 +78,44 @@ const toggleExpand = () => {
         </div>
       </div>
     </div>
+    <Transition name="switch" mode="out-in">
+      <div class="w-full h-20 absolute md:fixed bottom-0 left-0 backdrop-blur-sm" v-if="show">
+        <div class="w-96 h-full flex items-center justify-center mx-auto">
+          <transition-group
+            class="flex gap-5"
+            tag="ul"
+            appear
+            @before-enter="beforeEnter"
+            @enter="enter"
+          >
+            <li
+              class="p-2 bg-gray-400 rounded-full text-white"
+              v-for="(item, index) in svgs"
+              :key="index"
+              :data-index="index"
+            >
+              <a :href="item.link" target="_blank" v-html="item.svg"></a>
+            </li>
+          </transition-group>
+        </div>
+      </div>
+      <div v-else>
+        <Footer />
+      </div>
+    </Transition>
   </section>
 </template>
+
+<style scoped>
+/* switch transitions */
+.switch-enter-from,
+.switch-leave-to {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+.switch-enter-active,
+.switch-leave-active {
+  transition: all 0.4s ease;
+}
+</style>
