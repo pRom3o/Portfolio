@@ -24,11 +24,11 @@ const projects = ref([
 
     <Teleport to="body">
       <div
-        class="expand overflow-hidden"
+        class="expand overflow-hidden z-10"
         :class="
           expanded
-            ? 'h-full w-full md:w-1/3 fixed md:absolute md:top-[5%] md:left-[35%] top-0 left-0 bg-white rounded-xl p-6 '
-            : 'w-0 h-0 fixed md:absolute md:top-[5%] md:left-[35%] top-0 left-0'
+            ? 'h-full w-full md:w-1/3 fixed md:absolute md:top-[1%] md:left-[35%] top-0 left-0 bg-white rounded-xl p-6 '
+            : 'w-0 h-0 fixed md:absolute md:top-[1%] md:left-[35%] top-0 left-0'
         "
       >
         <button @click="toggle" class="rounded-full bg-gray-200 p-4 mb-3 hover:bg-gray-400">
