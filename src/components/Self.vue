@@ -17,7 +17,7 @@ import Asterics from './icons/Asterics.vue';
         <Asterics />
       </div>
       <div class="px-6 py-4 text-left bg-opacity-75 bg-slate-100 h-full rounded-xl shadow">
-        <h2 class="text-3xl font-semibold md:py-3">About me</h2>
+        <h2 class="text-3xl font-semibold md:py-3 italic">About me</h2>
         <p class="font-medium">
           Hi there, welocome to my Portfolio. <br />My name is Romeo, i'm a frontend web developer
           creating interactive, user-friendly websites and applications. With an intermediate
