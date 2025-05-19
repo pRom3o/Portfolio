@@ -19,7 +19,7 @@ import Asterics from './icons/Asterics.vue';
       <div class="px-6 py-4 text-left bg-opacity-75 bg-slate-100 h-full rounded-xl shadow">
         <h2 class="text-3xl font-semibold md:py-3 italic">About me</h2>
         <p class="font-medium">
-          Hi there, welocome to my Portfolio. <br />My name is Romeo, i'm a frontend web developer
+          Hi there, welocome to my Portfolio. <br />My name is Romeo, I'm a frontend web developer
           creating interactive, user-friendly websites and applications. With an intermediate
           experience in modern technologies like
           <span class="text-orange-400 font-medium italic">HTML</span>,
@@ -27,8 +27,9 @@ import Asterics from './icons/Asterics.vue';
           <span class="text-yellow-500 font-medium italic">JavaScript</span>, and frameworks like
           <span class="font-medium italic text-green-700">Vue.js</span>, I make designs that are
           both functional and visually appealing. Aside from turning ideas into responsive user
-          interfaces, i enjoy gaming, reading or watching animes during my free time. Got an idea
-          you want to bring to life?, contact me through any of my socials below
+          interfaces, I enjoy gaming, reading or watching animes during my free time. Got an idea
+          you want to bring to life?, contact me through any of my socials below and lets work
+          together.
         </p>
       </div>
     </div>
